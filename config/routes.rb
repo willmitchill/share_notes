@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
 
-  resources :universities
-
-  resources :controllers
+  resources :universities do
+    resources :courses
+  end
 
 end
