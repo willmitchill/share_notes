@@ -1,0 +1,8 @@
+<h1>Welcome to Note Share!</h1>
+<p></p>
+<% @universities.each do |university| %>
+  <div>
+    <h2><%= link_to university.name, university_path(university) %></h2>
+    <p><%= university.city %><p>
+  </div>
+<% end %>
