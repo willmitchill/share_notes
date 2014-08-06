@@ -1,4 +1,6 @@
 <h1><%= @university.name %></h1>
 <p>Select your course and view the goods!</p>
-
+<% @courses.each do |course| %>
+  <%= course.name %><br>
+<% end %>
 <%= link_to "Back to all Universities", universities_path %>

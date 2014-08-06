@@ -1,12 +1,9 @@
 class CoursesController < ApplicationController
   def index
-    @courses = Courses.find(params[:university_id])
+    @courses = Course.where(params[:university_id])
   end
 
-  def new
-  end
-
-  def create
+  def show
   end
 
   def edit
@@ -15,5 +12,12 @@ class CoursesController < ApplicationController
   def update
   end
 
+  def new
+  end
 
+  def create
+  end
+
+  def destroy
+  end
 end

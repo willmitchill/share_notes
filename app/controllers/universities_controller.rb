@@ -5,6 +5,7 @@ class UniversitiesController < ApplicationController
 
   def show
     @university = University.find(params[:id])
+    @courses = Course.where(:university_id => @university.id)
   end
 
   def new
