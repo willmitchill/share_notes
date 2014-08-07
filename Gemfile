@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry-rails'
 
 gem 'carrierwave'
+gem 'mini_magick'
 
 
 group :development do
