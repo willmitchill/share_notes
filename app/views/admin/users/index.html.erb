@@ -1,0 +1,13 @@
+<% @users.each do |user| %>
+  <div><%= user.firstname %></div>
+  <div><%= user.lastname %></div>
+  <div><%= user.email %></div>
+  <div><%= user.university %></div>
+  <div><% if user.admin == true %>
+    <h3>User is Admin</h3>
+  <% else %>
+    <h3>User is a basic bitch</3></div>
+  <% end %>
+  <%= link_to "Edit User", edit_admin_user_path(user) %>
+  <hr>
+<% end %>

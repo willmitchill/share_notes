@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   resources :sessions
 
-  resources :users, only: [:new, :create]
+  resources :users
+
+  namespace :admin do
+    resources :users
+  end
 
   resources :universities do
     resources :courses do

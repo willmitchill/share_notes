@@ -135,3 +135,12 @@ Course.create!(
   university_id: 1,
   user_id: 1,
 )
+
+User.create!(
+  firstname:"Shaq",
+  lastname:"O'Neal",
+  password_digest: "123",
+  university: "University of Victoria",
+  email: "shaq@gmail.com",
+  admin: true,
+)

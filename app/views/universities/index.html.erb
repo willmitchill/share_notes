@@ -6,3 +6,8 @@
     <p><%= university.city %><p>
   </div>
 <% end %>
+
+
+<% if current_user != nil && current_user.admin = true %>
+  <%= link_to "Admin Table", admin_users_path %>
+<% end %>
