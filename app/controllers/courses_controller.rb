@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @notes = Note.where(:course_id => @course.id)
+    @notes = @course.notes
   end
 
   def edit
