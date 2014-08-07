@@ -1,2 +1,18 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+
+
+<h1><%= @course.name %></h1>
+<p>Add a test, assignment or note and help out your peers!</p>
+<%= form_for @note, url: url_for(controller: 'notes', action: 'create', course_id: @course.id, university_id: @course.university.id) do |f| %>
+  <p>
+    <label>Upload a Test or Assignment!</label>
+    <%= f.file_field :file %>
+    <div>
+      <%= f.submit "Submit" %>
+    </div>
+  </p>
+<% end %>
+
+
+<% @notes.each do |note| %>
+  <%= image_tag note.file %>
+<% end %>

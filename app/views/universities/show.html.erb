@@ -1,7 +1,7 @@
 <h1><%= @university.name %></h1>
 <p>Select your course and view the goods!</p>
 <% @courses.each do |course| %>
-  <%= link_to course.name, university_course_path(course, @university.id) %><br>
+  <%= link_to course.name, university_course_path(@university, course) %><br>
 <% end %>
 
 

@@ -6,6 +6,8 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @notes = @course.notes
+    @note = @course.notes.build
+    @note.user = current_user
   end
 
   def edit
