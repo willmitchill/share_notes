@@ -1,9 +1,10 @@
 <h1><%= @university.name %></h1>
 <p>Select your course and view the goods!</p>
-<% @courses.each do |course| %>
-  <%= link_to course.name, university_course_path(@university, course) %><br>
-<% end %>
 
+
+<% @courses.each do |course| %>
+  <%= link_to "#{course.name}", university_course_path(@university, course) %><br>
+<% end %>
 
 <%= link_to "Add a course", new_university_course_path(@university.id) %>
 <%= link_to "Back to all Universities", universities_path %>

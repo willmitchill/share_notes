@@ -7,6 +7,7 @@ class UpvotesController < ApplicationController
     @upvote = Upvote.new
     @upvote.user_id = current_user.id
     @upvote.note_id = params[:note_id]
+    redirect_to university_course_notes_path
   end
 
   def destroy
@@ -20,4 +21,5 @@ class UpvotesController < ApplicationController
   def upvote_params
 
   end
+
 end

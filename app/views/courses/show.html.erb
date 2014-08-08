@@ -17,9 +17,11 @@
 <% end %>
 
 
+
 <% @notes.each do |note| %>
   <h2><%= note.title %></h2>
+  <h3><%= note.upvotes.count %>
   <%= image_tag note.file %>
-  <h3><%= link_to "Upvote", new_upvote_path(note) %></h3>
+  <h3><%= link_to "Upvote", upvotes_path %></h3>
 
 <% end %>

@@ -1,6 +1,10 @@
 class NotesController < ApplicationController
   def index
-    @notes = Note.where(params[:course_id])
+    if params[:search]
+      @notes = Note.search(params[:search]).order("created_at DESC")
+    else
+      @notes = Note.all
+    end
   end
 
   def new

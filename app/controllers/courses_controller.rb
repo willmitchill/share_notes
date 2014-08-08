@@ -1,4 +1,13 @@
 class CoursesController < ApplicationController
+
+  # def index
+  #   if params[:search]
+  #     @courses = Course.search(params[:search]).order("created_at DESC")
+  #   else
+  #     @courses = Course.order("created_at DESC")
+  #   end
+  # end
+
   def index
     @courses = Course.where(params[:university_id])
   end
@@ -8,7 +17,6 @@ class CoursesController < ApplicationController
     @notes = @course.notes
     @note = @course.notes.build
     @note.user = current_user
-    # @upvotes = Upvote.where(current_user.id)
   end
 
   def edit

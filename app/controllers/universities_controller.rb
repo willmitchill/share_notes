@@ -1,6 +1,10 @@
 class UniversitiesController < ApplicationController
-  def index
-    @universities = University.all
+ def index
+    if params[:search]
+      @universities = University.search(params[:search]).order("created_at DESC")
+    else
+      @universities = University.order("created_at DESC")
+    end
   end
 
   def show
