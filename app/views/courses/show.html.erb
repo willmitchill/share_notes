@@ -20,4 +20,6 @@
 <% @notes.each do |note| %>
   <h2><%= note.title %></h2>
   <%= image_tag note.file %>
+  <h3><%= link_to "Upvote", new_upvote_path(note) %></h3>
+
 <% end %>

@@ -8,6 +8,7 @@ class CoursesController < ApplicationController
     @notes = @course.notes
     @note = @course.notes.build
     @note.user = current_user
+    # @upvotes = Upvote.where(current_user.id)
   end
 
   def edit
