@@ -7,6 +7,10 @@
     <label>Upload a Test or Assignment!</label>
     <%= f.file_field :file %>
     <div>
+      <%= f.label "Title" %><br>
+      <%= f.text_field "title" %>
+    </div>
+    <div>
       <%= f.submit "Submit" %>
     </div>
   </p>
@@ -14,5 +18,6 @@
 
 
 <% @notes.each do |note| %>
+  <h2><%= note.title %></h2>
   <%= image_tag note.file %>
 <% end %>
