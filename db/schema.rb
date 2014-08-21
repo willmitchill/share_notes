@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808002559) do
+ActiveRecord::Schema.define(version: 20140821032307) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140808002559) do
     t.datetime "updated_at"
     t.string   "title"
     t.string   "date"
+    t.integer  "upvote_count", default: 0
   end
 
   add_index "notes", ["course_id"], name: "index_notes_on_course_id"

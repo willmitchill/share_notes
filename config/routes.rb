@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     end
   end
 
+  post "upvotes/:note_id", to: "upvotes#create"
+
   # resources :courses do
   #   resources :notes
   # end

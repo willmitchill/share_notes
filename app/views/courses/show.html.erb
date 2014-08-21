@@ -17,11 +17,21 @@
 <% end %>
 
 
-
-<% @notes.each do |note| %>
+<% @notes.order(:upvote_count).reverse.each do |note| %>
   <h2><%= note.title %></h2>
-  <h3><%= note.upvotes.count %>
+  <h3>Upvotes: <%= note.upvotes.count %>
   <%= image_tag note.file %>
-  <h3><%= link_to "Upvote", upvotes_path %></h3>
+
+
+  <% if note.upvotes.where(user_id: current_user.id) == [] %>
+    <%= form_tag "/upvotes/#{note.id}" do %>
+      <div>
+        <%= submit_tag "Upvote" %>
+      </div>
+    <% end %>
+    <% end %>
+
+
+
 
 <% end %>
