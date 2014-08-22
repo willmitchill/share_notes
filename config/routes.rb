@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :index, only: [:show, :index]
+
   resources :upvotes, only: [:new, :create, :destroy, :index, :show]
 
   resources :sessions

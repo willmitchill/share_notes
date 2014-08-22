@@ -1,0 +1,32 @@
+
+<h1>Welcome <%= current_user.firstname %>, we've been expecting you.</h1>
+<h3>My School:<%= current_user.university %></h3>
+<h3>Bio:<%= current_user.bio %></h3>
+
+<button id="edit-profile">Edit Profile</button>
+
+<div id="user-form">
+  <%= form_for [current_user] do |f| %>
+      <div>
+        <%= f.label "University" %><br>
+        <%= f.text_field "university" %>
+      </div>
+      <div>
+        <%= f.label "firstname", "First Name" %><br>
+        <%= f.text_field "firstname" %>
+      </div>
+      <div>
+        <%= f.label "lastname", "Last Name" %><br>
+        <%= f.text_field "lastname" %>
+      </div>
+      <div>
+        <%= f.label "Bio" %><br>
+        <%= f.text_field "bio" %>
+      </div>
+      <div>
+        <%= f.label "Email" %><br>
+        <%= f.text_field "email" %>
+      </div>
+      <div><%= f.submit "Submit" %></div>
+  <% end %>
+</div>
